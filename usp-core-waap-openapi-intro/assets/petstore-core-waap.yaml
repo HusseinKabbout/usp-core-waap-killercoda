@@ -8,13 +8,9 @@ metadata:
   name: petstore-usp-core-waap
   namespace: petstore
 spec:
-  crs:
-    mode: DISABLED
-  headerFiltering:
-    request:
-      enabled: false
-    response:
-      enabled: false
+  coraza:
+    crs:
+      mode: DISABLED
   trafficProcessing:
     openapi:
       - name: petstore-v3
