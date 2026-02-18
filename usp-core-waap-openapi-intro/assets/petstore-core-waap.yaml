@@ -10,7 +10,7 @@ metadata:
 spec:
   coraza:
     crs:
-      mode: DISABLED
+      mode: DETECT
   trafficProcessing:
     openapi:
       - name: petstore-v3

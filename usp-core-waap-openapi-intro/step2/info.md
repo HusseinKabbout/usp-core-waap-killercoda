@@ -42,7 +42,7 @@ metadata:
   namespace: petstore
 spec:
   crs:
-    mode: DISABLED
+    mode: DETECT
   headerFiltering:
     request:
       enabled: false

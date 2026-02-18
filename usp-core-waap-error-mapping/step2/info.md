@@ -80,8 +80,9 @@ spec:
     - key: error5xx.html
       statusCode: 5xx
   websocket: true
-  crs:
-    mode: DISABLED
+  coraza:
+      crs:
+        mode: DETECT
   routes:
     - match:
         path: /

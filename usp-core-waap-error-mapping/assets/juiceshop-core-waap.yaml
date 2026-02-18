@@ -17,7 +17,7 @@ spec:
   websocket: true
   coraza:
     crs:
-      mode: DISABLED
+      mode: DETECT
   headerFilter:
     defaultFilterRef: "default"
     filters:

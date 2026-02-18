@@ -11,7 +11,7 @@ spec:
   websocket: true
   coraza:
     crs:
-      mode: DISABLED
+      mode: DETECT
   csrfPolicy:
     enabled: true
   routes:
