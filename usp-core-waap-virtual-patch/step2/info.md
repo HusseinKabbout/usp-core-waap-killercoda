@@ -93,7 +93,7 @@ In addition to the `routes` configuration we enable a `customRequestBlockingRule
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/prometheus-usp-core-waap-proxy created
+corewaapservice.waap.core.u-s-p.ch/prometheus-usp-core-waap created
 ```
 
 </details>
@@ -118,7 +118,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-prometheus  prometheus-usp-core-waap-proxy   59s
+prometheus  prometheus-usp-core-waap   59s
 ```
 
 </details>

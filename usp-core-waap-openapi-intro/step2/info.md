@@ -77,7 +77,7 @@ spec:
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/petstore-usp-core-waap-proxy created
+corewaapservice.waap.core.u-s-p.ch/petstore-usp-core-waap created
 ```
 
 </details>
@@ -102,7 +102,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                     AGE
-petstore    petstore-usp-core-waap-proxy   59s
+petstore    petstore-usp-core-waap   59s
 ```
 
 </details>

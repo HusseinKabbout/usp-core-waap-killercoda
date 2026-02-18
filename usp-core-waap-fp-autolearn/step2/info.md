@@ -123,7 +123,7 @@ Now lets use the auto-learning tool to parse our **running USP Core WAAP instanc
 ```shell
 java -jar /tmp/waap-lib-autolearn-cli-${operator_version}.jar \
  -n juiceshop \
- -w juiceshop-usp-core-waap-proxy \
+ -w juiceshop-usp-core-waap \
  -o waap.yaml \
  crs
 ```{{exec}}
@@ -208,7 +208,7 @@ kubectl apply -f juiceshop-core-waap.yaml
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap-proxy configured
+corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap configured
 ```
 
 </details>

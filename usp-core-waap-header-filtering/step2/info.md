@@ -75,7 +75,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-nextjs      nextjs-app-usp-core-waap-proxy   59s
+nextjs      nextjs-app-usp-core-waap   59s
 ```
 
 </details>

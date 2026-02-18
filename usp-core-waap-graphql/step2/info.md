@@ -109,7 +109,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-lldap       lldap-usp-core-waap-proxy        59s
+lldap       lldap-usp-core-waap        59s
 ```
 
 </details>
@@ -119,7 +119,7 @@ And check if a Core WAAP Pod is running:
 
 ```shell
 kubectl get pods \
-  -l app.kubernetes.io/name=usp-core-waap-proxy \
+  -l app.kubernetes.io/name=usp-core-waap \
   --all-namespaces
 ```{{exec}}
 

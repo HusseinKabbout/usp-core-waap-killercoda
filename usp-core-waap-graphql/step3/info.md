@@ -150,12 +150,12 @@ First use the following command to temporary allow all GraphQL queries (DETECT i
 ```shell
 kubectl patch \
   corewaapservices.waap.core.u-s-p.ch \
-  lldap-usp-core-waap-proxy \
+  lldap-usp-core-waap \
   -n lldap \
   --type='json' -p='[{"op":"replace","path":"/spec/routes/0/coraza/graphql/mode", "value":"DETECT"},{"op":"replace","path":"/spec/coraza/crs/mode","value":"DETECT"}]'
 kubectl get \
   corewaapservices.waap.core.u-s-p.ch \
-  lldap-usp-core-waap-proxy \
+  lldap-usp-core-waap \
   -n lldap \
   -o json \
   | jq '{graphql: .spec.routes[0].coraza.graphql.mode, crs: .spec.coraza.crs.mode }'
@@ -165,7 +165,7 @@ kubectl get \
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap-proxy patched
+corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap patched
 {
   "graphql": "DETECT",
   "crs": "DETECT"
@@ -199,7 +199,7 @@ Now switch back to the [LLDAP user interface]({{TRAFFIC_HOST1_80}}) browser tab 
 ```shell
 java -jar ~/waap-lib-autolearn-cli.jar \
  -n lldap \
- -w lldap-usp-core-waap-proxy \
+ -w lldap-usp-core-waap \
  -o waap.yaml \
  graphql
 ```{{exec}}
@@ -244,7 +244,7 @@ kubectl apply -f waap.yaml
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap-proxy configured
+corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap configured
 ```
 
 </details>
@@ -255,7 +255,7 @@ Or just modify single queryThreshold settings using `kubectl patch` command (her
 ```shell
 kubectl patch \
   corewaapservices.waap.core.u-s-p.ch \
-  lldap-usp-core-waap-proxy \
+  lldap-usp-core-waap \
   -n lldap \
   --type='json' \
   -p='[{"op": "add", "path": "/spec/coraza/graphql/configs/0/queryThresholds", "value": {"complexity": 30}}]'
@@ -265,7 +265,7 @@ kubectl patch \
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap-proxy patched
+corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap patched
 ```
 
 </details>
@@ -276,12 +276,12 @@ And finally revert to BLOCK mode again using
 ```shell
 kubectl patch \
   corewaapservices.waap.core.u-s-p.ch \
-  lldap-usp-core-waap-proxy \
+  lldap-usp-core-waap \
   -n lldap \
   --type='json' -p='[{"op":"replace","path":"/spec/routes/0/coraza/graphql/mode", "value":"BLOCK"},{"op":"replace","path":"/spec/coraza/crs/mode","value":"BLOCK"}]'
 kubectl get \
   corewaapservices.waap.core.u-s-p.ch \
-  lldap-usp-core-waap-proxy \
+  lldap-usp-core-waap \
   -n lldap \
   -o json \
   | jq '{graphql: .spec.routes[0].coraza.graphql.mode, crs: .spec.coraza.crs.mode }'
@@ -291,7 +291,7 @@ kubectl get \
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap-proxy patched
+corewaapservice.waap.core.u-s-p.ch/lldap-usp-core-waap patched
 {
   "graphql": "BLOCK",
   "crs": "BLOCK"

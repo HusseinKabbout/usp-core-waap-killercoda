@@ -45,7 +45,7 @@ spec:
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap-proxy created
+corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap created
 ```
 
 </details>
@@ -70,7 +70,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-backend     juiceshop-usp-core-waap-proxy    59s
+backend     juiceshop-usp-core-waap    59s
 ```
 
 </details>

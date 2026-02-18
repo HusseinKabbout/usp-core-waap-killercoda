@@ -145,7 +145,7 @@ kubectl apply -f juiceshop-core-waap.yaml
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap-proxy configured
+corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap configured
 ```
 
 </details>
