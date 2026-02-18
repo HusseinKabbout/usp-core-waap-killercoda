@@ -17,7 +17,7 @@ Let's have a look at the logs!
 ```shell
 kubectl logs \
   -n juiceshop \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --tail=-1 \
   | grep "\[critical\]\[golang\]" \
   | grep -E '"request.path":"[^"]*"'
@@ -123,7 +123,7 @@ Now lets use the auto-learning tool to parse our **running USP Core WAAP instanc
 ```shell
 java -jar /tmp/waap-lib-autolearn-cli-${operator_version}.jar \
  -n juiceshop \
- -w juiceshop-usp-core-waap \
+ -w juiceshop-usp-core-waap-proxy \
  -o waap.yaml \
  crs
 ```{{exec}}
@@ -208,7 +208,7 @@ kubectl apply -f juiceshop-core-waap.yaml
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap configured
+corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap-proxy configured
 ```
 
 </details>
@@ -224,7 +224,7 @@ Execute
 ```shell
 kubectl logs \
   -n juiceshop \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --tail=100 \
   --follow \
   | grep 'add/update listener'
@@ -237,7 +237,7 @@ After the reload check the Core WAAP logs again for any new `/socket.io` entries
 ```shell
 kubectl logs \
   -n juiceshop \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   | grep "\[critical\]\[golang\]" \
   | grep -E '"request.path":"[^"]*"'
 ```{{exec}}

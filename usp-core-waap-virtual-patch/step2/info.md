@@ -93,7 +93,7 @@ In addition to the `routes` configuration we enable a `customRequestBlockingRule
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/prometheus-usp-core-waap created
+corewaapservice.waap.core.u-s-p.ch/prometheus-usp-core-waap-proxy created
 ```
 
 </details>
@@ -118,7 +118,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-prometheus  prometheus-usp-core-waap   59s
+prometheus  prometheus-usp-core-waap-proxy   59s
 ```
 
 </details>
@@ -128,7 +128,7 @@ Check if a Core WAAP Pod is running:
 
 ```shell
 kubectl get pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --all-namespaces
 ```{{exec}}
 
@@ -159,7 +159,7 @@ and wait for its readiness:
 
 ```shell
 kubectl wait pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   -n prometheus \
   --for='condition=Ready'
 ```{{exec}}
@@ -220,7 +220,7 @@ Using the following command you can extract the JSON part filtering for our `/de
 ```shell
 kubectl logs \
   -n prometheus \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --tail=1000 \
   | grep "\[critical\]\[golang\].*/debug/pprof" \
   | sed -e 's/\[.*\] {/{/' \

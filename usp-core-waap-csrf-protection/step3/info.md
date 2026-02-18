@@ -45,7 +45,7 @@ spec:
 <summary>example command output</summary>
 
 ```shell
-corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap created
+corewaapservice.waap.core.u-s-p.ch/juiceshop-usp-core-waap-proxy created
 ```
 
 </details>
@@ -70,7 +70,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-backend     juiceshop-usp-core-waap    59s
+backend     juiceshop-usp-core-waap-proxy    59s
 ```
 
 </details>
@@ -80,7 +80,7 @@ Check if a Core WAAP Pod is running:
 
 ```shell
 kubectl get pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --all-namespaces
 ```{{exec}}
 
@@ -111,7 +111,7 @@ and wait for its readiness:
 
 ```shell
 kubectl wait pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   -n juiceshop \
   --for='condition=Ready'
 ```{{exec}}

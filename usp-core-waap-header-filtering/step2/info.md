@@ -75,7 +75,7 @@ kubectl get corewaapservices --all-namespaces
 
 ```shell
 NAMESPACE   NAME                       AGE
-nextjs      nextjs-app-usp-core-waap   59s
+nextjs      nextjs-app-usp-core-waap-proxy   59s
 ```
 
 </details>
@@ -85,7 +85,7 @@ And check if a Core WAAP Pod is running:
 
 ```shell
 kubectl get pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --all-namespaces
 ```{{exec}}
 
@@ -116,7 +116,7 @@ and wait for its readiness:
 
 ```shell
 kubectl wait pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   -n nextjs \
   --for='condition=Ready'
 ```{{exec}}
@@ -270,7 +270,7 @@ Using the following command, you can filter for events of type 'removing request
 ```shell
 kubectl logs \
   -n nextjs \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   | grep 'removing request header' \
   | sed -e 's/\[.*\] script log: {/{/' \
   | jq
