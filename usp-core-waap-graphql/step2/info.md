@@ -119,7 +119,7 @@ And check if a Core WAAP Pod is running:
 
 ```shell
 kubectl get pods \
-  -l app.kubernetes.io/name=usp-core-waap \
+  -l app.kubernetes.io/name=usp-core-waap-proxy \
   --all-namespaces
 ```{{exec}}
 
@@ -219,7 +219,7 @@ To get more details on why a request was blocked, you can look into the Core WAA
 ```shell
 kubectl logs \
   -n lldap \
-  -l app.kubernetes.io/name=usp-core-waap
+  -l app.kubernetes.io/name=usp-core-waap-proxy
 ```{{exec}}
 
 Using the following command, you can filter for events of type 'removing request header' and, by parsing the log, see the details of the JSON payload:
@@ -260,6 +260,6 @@ kubectl logs \
 </deatils>
 <br />
 
-This command selects the Core WAAP Pod via label `app.kubernetes.io/name=usp-core-waap` in the respective namespace. It also parses the log message to show the relevant section of `GraphQL introspection query detected` message (JSON formatted).
+This command selects the Core WAAP Pod via label `app.kubernetes.io/name=usp-core-waap-proxy` in the respective namespace. It also parses the log message to show the relevant section of `GraphQL introspection query detected` message (JSON formatted).
 
 That's it! You have successfully prevented a GraphQL introspection query **using the USP Core WAAP**. Next we will have a look at query depth, batch size and complexity and how to safeguard against unexpected complex queries.

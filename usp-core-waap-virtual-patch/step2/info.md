@@ -210,7 +210,7 @@ To get more details why a request was blocked you can look into the Core WAAP lo
 ```shell
 kubectl logs \
   -n prometheus \
-  -l app.kubernetes.io/name=usp-core-waap
+  -l app.kubernetes.io/name=usp-core-waap-proxy
 ```{{exec}}
 
 The coraza log messages are split into two parts: First part in plain text containing the generic envoy log information indicating what module is taking action, which in our use-case is the golang [coraza web application firewall](https://github.com/corazawaf/coraza) module and the second part which is the actual payload log formatted as JSON.

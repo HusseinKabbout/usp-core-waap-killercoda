@@ -262,7 +262,7 @@ To get more details on why a request was blocked, you can look into the Core WAA
 ```shell
 kubectl logs \
   -n nextjs \
-  -l app.kubernetes.io/name=usp-core-waap
+  -l app.kubernetes.io/name=usp-core-waap-proxy
 ```{{exec}}
 
 Using the following command, you can filter for events of type 'removing request header' and, by parsing the log, see the details of the JSON payload:
@@ -276,6 +276,6 @@ kubectl logs \
   | jq
 ```{{exec}}
 
-This command selects the Core WAAP Pod via label `app.kubernetes.io/name=usp-core-waap` in the respective namespace.
+This command selects the Core WAAP Pod via label `app.kubernetes.io/name=usp-core-waap-proxy` in the respective namespace.
 
 That's it! You have successfully prevented an authentication bypass by using the USP Core WAAP.
